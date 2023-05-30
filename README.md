@@ -16,12 +16,8 @@
   No need to change.
 ### cutoff_len
   Here comes the interesting part. I set to 512(default) first time and the result crashed. the machine can only repeat the first two words of my question, later I knew that this parameter is about how much token you can look in a training data, and fortunately I found a website that can estimate how much token will be used in a training data. I put in the longest question and it shows about 3000~4000, so I set cutoff to 4096 and it works.
-### val_set_size
-
-### lora hyperparams
+### val_set_size, lora hyperparams
   No need to change.
-### llm hyperparams
-
 
   And the following shows the parameters I can change when using model user interface.
   
@@ -37,11 +33,10 @@
   Longest token of output, set it smaller since we only need number.
   
 ## Training Data
-  
+  We need to transform original csv/xlsx/txt file to a specific json form, TA had already provide a python execution file for transforming AI.xlsx file, However, we have to write own own python file if we want to do the same thing on a different form file. Using basic 10000 questions provided on Kaggle is enough. However, after adding NTU alpaca data recommended by TA ( and later updated on Kaggle ), the overall accuracy can enhance by 10~15%. which is way better than the previous one.
   
 ## Result
-  the error rate I get is about 7.3 to 6.7, depend on the learning epoch. The accuracy keep increasing when the epoch getting larger, but I choose to stop at 115 epoch due to the problem that too much students keep using gpu.
-  I train under two case, one with data argumentation(noise data + original data), and one without it(noise data only). the result is quite strange: It seems that the error rate between two case isn't very obvious, which is different from TA's showcase.
+  Just as I said, I spending almost a week to finishing training since I give a extremely large epoch, the final result fell between 35~45% (don't know if I want to train again), I regard it as a huge success.
   
 ## Comment
-  The main problem isn't the machine learing model itself, THE AMOUNT OF GPU IS TOO SMALL. We have to check the gpu frequently in order to train our model(also prevent other students using it and delay your training for 2 days), and this bother me so much because I have to keep checking terminal, I stay up almost every night during the competetion. this is a very awful experience. Please, please try apply some public gpu resource from university next time, I sincerely begging you guys.
+  The experience during this lab is way better than previous because the loading of GPU resource is finally released, and the bug is less comparing to other two homework. I'm glad I finally finishing the course, god blessing.
