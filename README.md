@@ -1,4 +1,4 @@
-# Deep Learning Lab3 Report
+# Deep Learning Lab3 Report 
   This time we're asked to fine-tuning Alpaca-Lara model to adapt the Chinese mutiple choice task.
   
 ## Fine-Tuning
